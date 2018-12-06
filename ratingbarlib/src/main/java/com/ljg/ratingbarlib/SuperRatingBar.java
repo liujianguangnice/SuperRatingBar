@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import java.math.BigDecimal;
 
-public class RatingBar extends LinearLayout {
+public class SuperRatingBar extends LinearLayout {
 
     /**
      * 是否可点击
@@ -105,20 +105,20 @@ public class RatingBar extends LinearLayout {
      * 构造函数
      * 获取xml中设置的资源文件
      */
-    public RatingBar(Context context, AttributeSet attrs) {
+    public SuperRatingBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         setOrientation(LinearLayout.HORIZONTAL);
-        TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.RatingBar);
-        starImageSize = mTypedArray.getDimension(R.styleable.RatingBar_starImageSize, 20);
-        starPadding = mTypedArray.getDimension(R.styleable.RatingBar_starPadding, 10);
-        starStep = mTypedArray.getFloat(R.styleable.RatingBar_starStep, 1.0f);
-        stepSize = StepSize.fromStep(mTypedArray.getInt(R.styleable.RatingBar_stepSize, 1));
-        starCount = mTypedArray.getInteger(R.styleable.RatingBar_starCount, 5);
-        Log.i("TAG", "RatingBar: RatingBar_starEmpty="+ mTypedArray.getDrawable(R.styleable.RatingBar_starEmpty));
-        starEmptyDrawable = mTypedArray.getDrawable(R.styleable.RatingBar_starEmpty)==null?getResources().getDrawable(R.drawable.rating_small_empty):mTypedArray.getDrawable(R.styleable.RatingBar_starEmpty);
-        starFillDrawable = mTypedArray.getDrawable(R.styleable.RatingBar_starFill)==null?getResources().getDrawable(R.drawable.rating_small_full):mTypedArray.getDrawable(R.styleable.RatingBar_starFill);
-        starHalfDrawable = mTypedArray.getDrawable(R.styleable.RatingBar_starHalf)==null?getResources().getDrawable(R.drawable.rating_small_half):mTypedArray.getDrawable(R.styleable.RatingBar_starHalf);
-        mClickable = mTypedArray.getBoolean(R.styleable.RatingBar_clickable, true);
+        TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.SuperRatingBar);
+        starImageSize = mTypedArray.getDimension(R.styleable.SuperRatingBar_starImageSize, 20);
+        starPadding = mTypedArray.getDimension(R.styleable.SuperRatingBar_starPadding, 10);
+        starStep = mTypedArray.getFloat(R.styleable.SuperRatingBar_starStep, 1.0f);
+        stepSize = StepSize.fromStep(mTypedArray.getInt(R.styleable.SuperRatingBar_stepSize, 1));
+        starCount = mTypedArray.getInteger(R.styleable.SuperRatingBar_starCount, 5);
+        Log.i("TAG", "RatingBar: RatingBar_starEmpty="+ mTypedArray.getDrawable(R.styleable.SuperRatingBar_starEmpty));
+        starEmptyDrawable = mTypedArray.getDrawable(R.styleable.SuperRatingBar_starEmpty)==null?getResources().getDrawable(R.drawable.rating_small_empty):mTypedArray.getDrawable(R.styleable.SuperRatingBar_starEmpty);
+        starFillDrawable = mTypedArray.getDrawable(R.styleable.SuperRatingBar_starFill)==null?getResources().getDrawable(R.drawable.rating_small_full):mTypedArray.getDrawable(R.styleable.SuperRatingBar_starFill);
+        starHalfDrawable = mTypedArray.getDrawable(R.styleable.SuperRatingBar_starHalf)==null?getResources().getDrawable(R.drawable.rating_small_half):mTypedArray.getDrawable(R.styleable.SuperRatingBar_starHalf);
+        mClickable = mTypedArray.getBoolean(R.styleable.SuperRatingBar_clickable, true);
         mTypedArray.recycle();
         for (int i = 0; i < starCount; ++i) {
             final ImageView imageView = getStarImageView();
